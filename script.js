@@ -1,5 +1,25 @@
 const switchButtons = document.querySelectorAll("[data-lang-switch]");
 const paperDetails = {
+  "Patch-wise Sensor Network Localization via Robust Restoration of Euclidean Distance Matrices": {
+    descriptionJa: "欠損やノイズを含むユークリッド距離行列をパッチ単位で頑健に修復し，センサネットワークの位置を推定する研究である．",
+    descriptionEn: "This work studies patch-wise sensor network localization using robust restoration of incomplete and noisy Euclidean distance matrices.",
+    links: []
+  },
+  "反復的間隔最大化によるUAV基地局の配置": {
+    descriptionJa: "UAV基地局の配置問題を，基地局間の間隔を反復的に最大化する観点から検討した研究である．",
+    descriptionEn: "This work studies UAV base-station placement through iterative maximization of separation margins.",
+    links: []
+  },
+  "被覆最大化によるUAV基地局の配置": {
+    descriptionJa: "UAV基地局の配置について，被覆を最大化する観点から検討した研究である．",
+    descriptionEn: "This work studies UAV base-station deployment with the objective of maximizing coverage.",
+    links: []
+  },
+  "3次元表面再構成のための深度・法線マップ同時ノイズ除去": {
+    descriptionJa: "3次元表面再構成に向けて，深度マップと法線マップを幾何学的整合性を考慮しながら同時にノイズ除去する研究である．",
+    descriptionEn: "This work studies joint denoising of depth and normal maps while considering geometric consistency for three-dimensional surface reconstruction.",
+    links: []
+  },
   "WREN: Low light image enhancement using retinex theory-based double U-Net-like structures": {
     descriptionJa:
       "Retinex理論に基づき，低照度画像を安定して高品質に復元する深層学習手法を提案した研究である．反射成分と照明成分に分解する考え方をネットワーク構造に取り入れ，照明成分のみを強調することで自然な明るさの復元を目指すものである．",
@@ -157,6 +177,14 @@ const paperDetails = {
 const awardRecords = [
   {
     year: 2026,
+    sort: "2026-06",
+    titleJa: "RCS研究会 初めての研究会 優秀発表賞",
+    titleEn: "RCS First Research Meeting Outstanding Presentation Award",
+    bodyJa: "電子情報通信学会 無線通信システム研究会",
+    bodyEn: "IEICE Technical Committee on Radio Communication Systems"
+  },
+  {
+    year: 2026,
     sort: "2026-03",
     titleJa: "信号処理研究会賞",
     titleEn: "IEICE Signal Processing Research Award",
@@ -189,6 +217,30 @@ const awardRecords = [
   }
 ];
 const publicationRecords = [
+  {
+    sort: "2027-01",
+    authors: "R. Kaneko, K. Yanagiya, J. Hara, H. Higashi, and Y. Tanaka",
+    title: "Patch-wise Sensor Network Localization via Robust Restoration of Euclidean Distance Matrices",
+    venue: "IEEE CCNC, Las Vegas, USA, January 2027."
+  },
+  {
+    sort: "2026-12",
+    authors: "金子玲菜, 原惇也, 東広志, 田中雄一",
+    title: "3次元表面再構成のための深度・法線マップ同時ノイズ除去",
+    venue: "第41回信号処理シンポジウム, 広島, 2026年12月."
+  },
+  {
+    sort: "2026-08",
+    authors: "金子玲菜, 原惇也, 東広志, 田中雄一",
+    title: "被覆最大化によるUAV基地局の配置",
+    venue: "信号処理研究会, 群馬, 2026年8月."
+  },
+  {
+    sort: "2026-07",
+    authors: "金子玲菜, 原惇也, 東広志, 田中雄一",
+    title: "反復的間隔最大化によるUAV基地局の配置",
+    venue: "コミュニケーションシステム研究会, 沖縄, 2026年7月."
+  },
   {
     sort: "2026-09",
     authors: "R. Kaneko, J. Hara, H. Higashi, and Y. Tanaka",
@@ -439,6 +491,9 @@ function publicationIllustrationFor(data) {
   const venue = data.venue;
   const category = data.categoryEn;
   if (category.includes("Journal")) return "assets/publication-locations/journal-book.png";
+  if (/Las Vegas/i.test(venue)) return "assets/publication-locations/las-vegas.svg";
+  if (/群馬|Gunma/i.test(venue)) return "assets/publication-locations/gunma.svg";
+  if (/広島|Hiroshima/i.test(venue)) return "assets/publication-locations/hiroshima.svg";
   if (/Tampere/i.test(venue)) return "assets/publication-locations/tampere.png";
   if (/Palermo/i.test(venue)) return "assets/publication-locations/palermo.png";
   if (/Milan/i.test(venue)) return "assets/publication-locations/milan.png";
@@ -458,6 +513,7 @@ function publicationIllustrationFor(data) {
 function publicationFlagFor(data) {
   const venue = data.venue;
   if (/Tampere/i.test(venue)) return "🇫🇮";
+  if (/Las Vegas/i.test(venue)) return "🇺🇸";
   if (/Palermo|Milan/i.test(venue)) return "🇮🇹";
   if (/Montreal/i.test(venue)) return "🇨🇦";
   if (/London/i.test(venue)) return "🇬🇧";
