@@ -501,8 +501,7 @@ function publicationIllustrationFor(data) {
   if (/London/i.test(venue)) return "assets/publication-locations/london.png";
   if (/Delft/i.test(venue)) return "assets/publication-locations/delft.png";
   if (/Taipei/i.test(venue)) return "assets/publication-locations/taipei.png";
-  if (data.title === "反復的間隔最大化によるUAV基地局の配置") return "assets/publication-locations/okinawa-2026.webp";
-  if (/沖縄|Okinawa/i.test(venue)) return "assets/publication-locations/okinawa.png";
+  if (/沖縄|Okinawa/i.test(venue)) return "assets/publication-locations/okinawa-2026.webp";
   if (/福岡|Fukuoka/i.test(venue)) return "assets/publication-locations/fukuoka.png";
   if (/宮城|Miyagi/i.test(venue)) return "assets/publication-locations/miyagi.png";
   if (/北海道|Hokkaido/i.test(venue)) return "assets/publication-locations/hokkaido.png";

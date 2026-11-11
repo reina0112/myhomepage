@@ -1487,29 +1487,38 @@ address span+span::before {
   object-position: center 42%;
 }
 
-/* 2枚目を上に重ねて、透明度だけ変える */
-.profile-image-b {
-  animation: profile-crossfade 8s ease-in-out infinite;
+/* プロフィール写真は、元のDisneyの写真も残して3枚を順番に切り替える */
+.profile-image-switcher .profile-image-a {
+  object-position: center 43%;
 }
 
-/* 
-  0〜40%: 1枚目
-  50〜90%: 2枚目
-  100%: 1枚目へ戻る
-*/
-@keyframes profile-crossfade {
+.profile-image-switcher .profile-image-b {
+  object-position: center 38%;
+  opacity: 0;
+  animation: profile-crossfade-second 18s ease-in-out infinite;
+}
 
-  0%,
-  40% {
+.profile-image-switcher .profile-image-c {
+  opacity: 0;
+  animation: profile-crossfade-third 18s ease-in-out infinite;
+}
+
+@keyframes profile-crossfade-second {
+  0%, 28% { opacity: 0; }
+  34%, 60% { opacity: 1; }
+  66%, 100% { opacity: 0; }
+}
+
+@keyframes profile-crossfade-third {
+  0%, 60% { opacity: 0; }
+  66%, 94% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .profile-image-switcher .profile-image-b,
+  .profile-image-switcher .profile-image-c {
     opacity: 0;
-  }
-
-  50%,
-  90% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
+    animation: none;
   }
 }
