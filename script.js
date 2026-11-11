@@ -491,9 +491,9 @@ function publicationIllustrationFor(data) {
   const venue = data.venue;
   const category = data.categoryEn;
   if (category.includes("Journal")) return "assets/publication-locations/journal-book.png";
-  if (/Las Vegas/i.test(venue)) return "assets/publication-locations/las-vegas.svg";
-  if (/群馬|Gunma/i.test(venue)) return "assets/publication-locations/gunma.svg";
-  if (/広島|Hiroshima/i.test(venue)) return "assets/publication-locations/hiroshima.svg";
+  if (/Las Vegas/i.test(venue)) return "assets/publication-locations/las-vegas.webp";
+  if (/群馬|Gunma/i.test(venue)) return "assets/publication-locations/gunma.webp";
+  if (/広島|Hiroshima/i.test(venue)) return "assets/publication-locations/hiroshima.webp";
   if (/Tampere/i.test(venue)) return "assets/publication-locations/tampere.png";
   if (/Palermo/i.test(venue)) return "assets/publication-locations/palermo.png";
   if (/Milan/i.test(venue)) return "assets/publication-locations/milan.png";
@@ -501,6 +501,7 @@ function publicationIllustrationFor(data) {
   if (/London/i.test(venue)) return "assets/publication-locations/london.png";
   if (/Delft/i.test(venue)) return "assets/publication-locations/delft.png";
   if (/Taipei/i.test(venue)) return "assets/publication-locations/taipei.png";
+  if (data.title === "反復的間隔最大化によるUAV基地局の配置") return "assets/publication-locations/okinawa-2026.webp";
   if (/沖縄|Okinawa/i.test(venue)) return "assets/publication-locations/okinawa.png";
   if (/福岡|Fukuoka/i.test(venue)) return "assets/publication-locations/fukuoka.png";
   if (/宮城|Miyagi/i.test(venue)) return "assets/publication-locations/miyagi.png";
@@ -564,8 +565,8 @@ function openPaperDialog(data) {
     preview.innerHTML = `<img src="${data.previewImage}" alt="${data.title} first page preview">`;
   } else {
     preview.innerHTML = `<div class="paper-preview-placeholder"><strong>${data.title}</strong><span>${language === "ja"
-      ? "この研究の概要を左ページにまとめている．"
-      : "A short summary of this work is shown on the left page."
+      ? "論文の1ページ目のプレビューは未登録です．"
+      : "The first-page preview has not been uploaded yet."
       }</span></div>`;
   }
 
