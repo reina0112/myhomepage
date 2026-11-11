@@ -1686,3 +1686,80 @@ body {
   a { text-decoration: none !important; }
   @page { size: A4; margin: 13mm; }
 }
+
+
+/* Sakura refinements — 2026-11-12 */
+.brand-mark { align-items: center; justify-content: center; width: 3rem; height: 3rem; overflow: visible; }
+.brand-mark img { width: 3rem; height: 3rem; object-fit: contain; max-width: none; }
+.section-label::before {
+  background-image: url("assets/sakura-single.webp");
+  background-size: contain;
+  width: 1.5rem;
+  height: 1.5rem;
+  vertical-align: -.2rem;
+}
+.research-card::after {
+  background: url("assets/sakura-corner-bottom.webp") right bottom / contain no-repeat;
+  width: 6.4rem;
+  height: 6.4rem;
+  right: -.3rem;
+  bottom: -.3rem;
+  opacity: 1;
+}
+.profile-image-switcher::before {
+  opacity: 1;
+  background-size: contain;
+  filter: none;
+}
+.cv-page {
+  background:
+    url("assets/sakura-corner-bottom.webp") left bottom / 14rem auto no-repeat,
+    radial-gradient(circle at 84% 14%, rgba(255, 223, 226, .16), transparent 17rem),
+    linear-gradient(180deg, rgba(255, 253, 252, .96), rgba(255, 248, 245, .93));
+}
+.cv-page::before {
+  content: "";
+  position: absolute;
+  top: 4.65rem;
+  right: .3rem;
+  width: min(23rem, 45%);
+  height: 5.5rem;
+  background: url("assets/sakura-cv-horizontal.webp") center / contain no-repeat;
+  opacity: 1;
+  transform: none;
+  pointer-events: none;
+}
+.cv-page .awards-hero, .cv-page .cv-sheet { position: relative; z-index: 1; }
+.cv-page .cv-print { position: relative; z-index: 2; }
+
+/* Harmonize the older conference-location illustrations with pastel watercolor art.
+   Preserve their original landmarks, while softening linework and adding paper grain. */
+.publication-location-art { isolation: isolate; background: #fff9f5; border-color: rgba(225, 194, 190, .62); }
+.publication-location-art img {
+  transition: filter .2s ease;
+}
+.publication-location-art img[src$=".png"] {
+  filter: saturate(.69) contrast(.80) brightness(1.085) sepia(.065) blur(.27px);
+}
+.publication-location-art::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    url("assets/watercolor-texture.webp") center / cover no-repeat,
+    linear-gradient(125deg, rgba(255,247,249,.23), transparent 62%, rgba(252,221,225,.2));
+  mix-blend-mode: soft-light;
+  opacity: .65;
+  pointer-events: none;
+  border-radius: inherit;
+}
+.publication-location-art .publication-flag { z-index: 2; }
+@media (max-width: 560px) {
+  .brand-mark, .brand-mark img { width: 2.3rem; height: 2.3rem; }
+  .research-card::after { width: 5rem; height: 5rem; }
+  .cv-page::before { top: 5.3rem; right: 0; width: 12rem; height: 3rem; }
+}
+@media print {
+  .cv-page::before { display: none; }
+}
