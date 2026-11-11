@@ -176,7 +176,7 @@ main {
 .section-label::before {
   margin-right: 0.65rem;
   color: var(--green);
-  content: "❧";
+  content: "✿";
 }
 
 .section-heading {
@@ -219,7 +219,7 @@ main {
   top: 2rem;
   right: 6.5rem;
   color: rgba(84, 114, 75, 0.22);
-  content: "❧";
+  content: "✿";
   font-size: clamp(2.8rem, 6vw, 5rem);
   line-height: 1;
   transform: rotate(-18deg);
@@ -288,7 +288,7 @@ main {
 
 .detail-block h3::before {
   color: var(--green);
-  content: "❧";
+  content: "✿";
   font-size: 1.35rem;
   line-height: 1;
 }
@@ -414,7 +414,7 @@ main {
   top: 1.1rem;
   right: 1.4rem;
   color: rgba(84, 114, 75, 0.16);
-  content: "❧";
+  content: "✿";
   font-size: 6.5rem;
   line-height: 1;
   pointer-events: none;
@@ -435,7 +435,7 @@ main {
   top: 2.8rem;
   right: 32%;
   color: rgba(84, 114, 75, 0.18);
-  content: "❧";
+  content: "✿";
   font-size: 2.4rem;
   transform: rotate(-12deg);
 }
@@ -456,7 +456,7 @@ main {
   left: 28%;
   right: auto;
   color: rgba(84, 114, 75, 0.16);
-  content: "❧";
+  content: "✿";
   font-size: 2.4rem;
   transform: rotate(15deg);
 }
@@ -577,13 +577,13 @@ main {
 
 .full-award-list time::before {
   left: -0.4rem;
-  content: "❧";
+  content: "✿";
   transform: translateY(-50%) rotate(-34deg);
 }
 
 .full-award-list time::after {
   right: -0.4rem;
-  content: "❧";
+  content: "✿";
   transform: translateY(-50%) scaleX(-1) rotate(-34deg);
 }
 
@@ -1521,4 +1521,168 @@ address span+span::before {
     opacity: 0;
     animation: none;
   }
+}
+
+
+/* Sakura theme — warm, understated watercolor accents. */
+:root {
+  --ink: #4a332e;
+  --muted: #796661;
+  --green: #b6808a;
+  --green-dark: #845c65;
+  --line: #eadcd8;
+  --paper: #fffaf8;
+  --paper-soft: #fff1ee;
+  --shadow: 0 16px 40px rgba(117, 83, 86, 0.11);
+}
+body {
+  background:
+    radial-gradient(circle at 4% 5%, rgba(245, 189, 198, .16), transparent 29rem),
+    radial-gradient(circle at 98% 82%, rgba(245, 204, 207, .12), transparent 25rem),
+    linear-gradient(180deg, #fffdfc 0%, #fffaf8 55%, #fcf4f0 100%);
+}
+.nav a::after { background: #c9949e; }
+.brand-mark {
+  width: 2.7rem;
+  height: 2.7rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+.brand-mark img {
+  width: 2.6rem;
+  height: 2.6rem;
+  object-fit: contain;
+}
+.section-label::before {
+  content: "";
+  display: inline-block;
+  width: 1.3rem;
+  height: 1.3rem;
+  margin-right: .55rem;
+  vertical-align: -.13rem;
+  background: url("assets/sakura-mark.webp") center / contain no-repeat;
+}
+.detail-block h3::before {
+  content: "✿";
+  color: #c38c99;
+  font-size: 1.1rem;
+}
+.about::after {
+  content: "";
+  top: -1rem;
+  right: -.4rem;
+  width: 13rem;
+  height: 18rem;
+  background: url("assets/sakura-corner-top.webp") center / contain no-repeat;
+  opacity: .36;
+  transform: none;
+}
+.profile-image-switcher::before {
+  background: url("assets/sakura-corner-bottom.webp") center / contain no-repeat;
+  opacity: .4;
+  transform: rotate(-7deg);
+}
+.awards-page,
+.publications-page,
+.cv-page {
+  background:
+    url("assets/sakura-corner-top.webp") top right / 13rem auto no-repeat,
+    url("assets/sakura-corner-bottom.webp") left bottom / 14rem auto no-repeat,
+    radial-gradient(circle at 84% 14%, rgba(255, 223, 226, .16), transparent 17rem),
+    linear-gradient(180deg, rgba(255, 253, 252, .93), rgba(255, 248, 245, .9));
+}
+.awards-page::before,
+.publications-page::before { content: none; display: none; }
+.full-award-list time::before,
+.full-award-list time::after {
+  content: "✿";
+  font-size: .93rem;
+  color: #c48b96;
+}
+.contact img {
+  width: min(27rem, 46%);
+  opacity: .95;
+  object-fit: contain;
+}
+.cv-page {
+  padding: clamp(1.4rem, 4vw, 3.2rem);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: var(--shadow);
+}
+.cv-sheet {
+  position: relative;
+  z-index: 1;
+  max-width: 57rem;
+  padding: clamp(1.4rem, 4vw, 3.3rem);
+  margin: 1.3rem auto 0;
+  background: rgba(255,255,255,.9);
+  border: 1px solid #eaded8;
+  border-radius: 14px;
+}
+.cv-profile {
+  display: flex;
+  align-items: center;
+  gap: 1.7rem;
+  padding-bottom: 1.4rem;
+  border-bottom: 1px solid var(--line);
+}
+.cv-profile img {
+  width: 7rem;
+  height: 7rem;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 37%;
+}
+.cv-profile h1 {
+  margin: 0;
+  color: #553b37;
+  font-size: clamp(1.6rem, 3.5vw, 2.3rem);
+  line-height: 1.25;
+}
+.cv-profile h1 span { font-size: .73em; font-weight: normal; }
+.cv-profile p { margin: .28rem 0; font-size: .94rem; color: #675652; }
+.cv-block { padding: 1.3rem 0 0; }
+.cv-block h2 {
+  margin: 0 0 .6rem;
+  padding-bottom: .25rem;
+  color: #855660;
+  border-bottom: 1px solid #e7d8d6;
+  font-size: 1.17rem;
+}
+.cv-block ul, .cv-block ol { margin: .35rem 0 0; padding-left: 1.45rem; }
+.cv-block li { margin: .38rem 0; font-size: .93rem; }
+.cv-block a, .cv-back { color: #835864; text-decoration: underline; text-underline-offset: .2rem; }
+.cv-time { min-width: 7rem; color: var(--muted); font-variant-numeric: tabular-nums; }
+.cv-edu-row { display: flex; gap: 1rem; margin: .55rem 0; font-size: .92rem; }
+.cv-print {
+  align-self: start;
+  padding: .45rem 1rem;
+  color: #76505a;
+  background: #fff2ef;
+  border: 1px solid #e7c9cd;
+  border-radius: 999px;
+  font: inherit;
+  font-size: .84rem;
+  cursor: pointer;
+}
+.cv-print:hover { background: #fce6e5; }
+@media (max-width: 560px) {
+  .cv-profile { flex-direction: column; align-items: start; }
+  .cv-edu-row { flex-direction: column; gap: .1rem; }
+  .cv-page { padding: 1rem; }
+  .contact img { max-width: 44%; }
+  .about::after { opacity: .18; }
+  .brand-mark { width: 2.2rem; height: 2.2rem; }
+}
+@media print {
+  .site-header, .footer, .cv-print, .cv-back { display: none !important; }
+  body, .cv-page, .cv-sheet { margin: 0; padding: 0; background: #fff; box-shadow: none; border: 0; }
+  .cv-sheet { max-width: 100%; }
+  .cv-block { break-inside: avoid; }
+  a { text-decoration: none !important; }
+  @page { size: A4; margin: 13mm; }
 }

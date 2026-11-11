@@ -491,9 +491,9 @@ function publicationIllustrationFor(data) {
   const venue = data.venue;
   const category = data.categoryEn;
   if (category.includes("Journal")) return "assets/publication-locations/journal-book.png";
-  if (/Las Vegas/i.test(venue)) return "assets/publication-locations/las-vegas.webp";
-  if (/群馬|Gunma/i.test(venue)) return "assets/publication-locations/gunma.webp";
-  if (/広島|Hiroshima/i.test(venue)) return "assets/publication-locations/hiroshima.webp";
+  if (/Las Vegas/i.test(venue)) return "assets/publication-locations/las-vegas-sakura.webp";
+  if (/群馬|Gunma/i.test(venue)) return "assets/publication-locations/gunma-sakura.webp";
+  if (/広島|Hiroshima/i.test(venue)) return "assets/publication-locations/hiroshima-sakura.webp";
   if (/Tampere/i.test(venue)) return "assets/publication-locations/tampere.png";
   if (/Palermo/i.test(venue)) return "assets/publication-locations/palermo.png";
   if (/Milan/i.test(venue)) return "assets/publication-locations/milan.png";
@@ -501,7 +501,7 @@ function publicationIllustrationFor(data) {
   if (/London/i.test(venue)) return "assets/publication-locations/london.png";
   if (/Delft/i.test(venue)) return "assets/publication-locations/delft.png";
   if (/Taipei/i.test(venue)) return "assets/publication-locations/taipei.png";
-  if (/沖縄|Okinawa/i.test(venue)) return "assets/publication-locations/okinawa-2026.webp";
+  if (/沖縄|Okinawa/i.test(venue)) return "assets/publication-locations/okinawa-sakura.webp";
   if (/福岡|Fukuoka/i.test(venue)) return "assets/publication-locations/fukuoka.png";
   if (/宮城|Miyagi/i.test(venue)) return "assets/publication-locations/miyagi.png";
   if (/北海道|Hokkaido/i.test(venue)) return "assets/publication-locations/hokkaido.png";
@@ -619,3 +619,6 @@ paperClose?.addEventListener("click", () => paperDialog.close());
 paperDialog?.addEventListener("click", (event) => {
   if (event.target === paperDialog) paperDialog.close();
 });
+
+// Print the bilingual academic CV; browser print dialog can save as PDF.
+document.querySelector("#cvPrintButton")?.addEventListener("click", () => window.print());
