@@ -1849,3 +1849,22 @@ body {
     display: none;
   }
 }
+
+/* Research card sakura: grow from each card's bottom-right corner. */
+.research-card::after {
+  right: -0.12rem;
+  bottom: -0.12rem;
+  width: 8.25rem;
+  height: 6.6rem;
+  background: url("assets/sakura-corner-bottom.webp") center / 100% 100% no-repeat;
+  transform: scaleX(-1);
+  transform-origin: center;
+  opacity: 1;
+  pointer-events: none;
+}
+@media (max-width: 560px) {
+  .research-card::after {
+    width: 6.5rem;
+    height: 5.2rem;
+  }
+}
