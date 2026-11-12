@@ -1763,3 +1763,89 @@ body {
 @media print {
   .cv-page::before { display: none; }
 }
+
+
+/* Tallinn watercolor hero and paired sakura details — 2026-11-12 */
+.about {
+  background:
+    linear-gradient(90deg,
+      rgba(255, 253, 249, .43) 0%,
+      rgba(255, 253, 249, .70) 31%,
+      rgba(255, 253, 249, .76) 64%,
+      rgba(255, 253, 249, .49) 100%),
+    url("assets/tallinn-hero-watercolor.webp") center center / cover no-repeat;
+}
+.about::before {
+  background: linear-gradient(180deg, rgba(255, 253, 249, .035), rgba(255, 253, 249, .08));
+}
+/* The Tallinn painting already contains blossoms, so avoid overlapping decoration. */
+.about::after {
+  display: none;
+  content: none;
+}
+/* Use exactly the same single-flower motif on both sides of Research. */
+.research .section-label::after {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-left: .55rem;
+  vertical-align: -.2rem;
+  content: "";
+  background: url("assets/sakura-single.webp") center / contain no-repeat;
+  transform: scaleX(-1);
+}
+/* Upper-right sakura turns clockwise, opposite the lower-left floral corner. */
+.awards-page,
+.publications-page,
+.cv-page {
+  position: relative;
+  overflow: hidden;
+  background:
+    url("assets/sakura-corner-bottom.webp") left bottom / 14rem auto no-repeat,
+    radial-gradient(circle at 84% 14%, rgba(255, 223, 226, .14), transparent 17rem),
+    linear-gradient(180deg, rgba(255, 253, 252, .96), rgba(255, 248, 245, .90));
+}
+.awards-page::after,
+.publications-page::after,
+.cv-page::after {
+  position: absolute;
+  top: -1.25rem;
+  right: -1.25rem;
+  z-index: 0;
+  width: 15rem;
+  height: 15rem;
+  content: "";
+  background: url("assets/sakura-corner-top.webp") center / contain no-repeat;
+  transform: rotate(90deg);
+  transform-origin: center center;
+  pointer-events: none;
+}
+/* Replace the CV's old horizontal top decoration with the same turned corner. */
+.cv-page::before {
+  display: none;
+  content: none;
+}
+.cv-page .cv-back {
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 600px) {
+  .about {
+    background-position: 60% center;
+  }
+  .awards-page::after,
+  .publications-page::after,
+  .cv-page::after {
+    top: -.75rem;
+    right: -.75rem;
+    width: 9rem;
+    height: 9rem;
+  }
+}
+@media print {
+  .awards-page::after,
+  .publications-page::after,
+  .cv-page::after {
+    display: none;
+  }
+}
