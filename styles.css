@@ -491,7 +491,7 @@ main {
 
 .full-award-list li {
   position: relative;
-  grid-template-columns: 9.5rem 1fr 5rem;
+  grid-template-columns: 9.5rem minmax(0, 1fr);
   align-items: center;
   gap: 1.55rem;
   overflow: hidden;
@@ -1886,12 +1886,6 @@ body {
   box-shadow: 0 0 0 2px #e9c4cc, 0 2px 5px rgba(151, 93, 111, .14);
 }
 
-/* Awards: hide the stray ornament on the right. */
-.awards-page::after {
-  display: none;
-  content: none;
-}
-
 /* Soft stationery-style publication category headings. */
 .publication-group {
   --heading-wash: #fff0f2;
@@ -1999,4 +1993,25 @@ body {
 @media (max-width: 560px) {
   .publication-group h2 { max-width: 100%; }
   .cv-print { white-space: normal; }
+}
+
+/* Award cards: keep the page-level cherry blossoms, remove only the ❦ on each card. */
+.full-award-list li::after {
+  display: none;
+  content: none;
+}
+
+/* Both the timeline line and the dots share exactly one horizontal axis. */
+.timeline {
+  --timeline-indent: 1.5rem;
+  --timeline-axis: 0.46rem;
+  padding-left: var(--timeline-indent);
+}
+.timeline::before {
+  left: var(--timeline-axis);
+  width: 2px;
+}
+.timeline li::before {
+  left: calc(var(--timeline-axis) + 1px - var(--timeline-indent));
+  transform: translateX(-50%);
 }
