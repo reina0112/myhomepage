@@ -500,13 +500,13 @@ function publicationIllustrationFor(data) {
   if (/Montreal/i.test(venue)) return "assets/publication-locations/montreal-watercolor.webp";
   if (/London/i.test(venue)) return "assets/publication-locations/london-watercolor.webp";
   if (/Delft/i.test(venue)) return "assets/publication-locations/delft-watercolor.webp";
-  if (/Taipei/i.test(venue)) return "assets/publication-locations/taipei-watercolor.webp";
+  if (/Taipei/i.test(venue)) return "assets/publication-locations/taipei-watercolor-v2.webp";
   if (/沖縄|Okinawa/i.test(venue)) return "assets/publication-locations/okinawa-sakura.webp";
-  if (/福岡|Fukuoka/i.test(venue)) return "assets/publication-locations/fukuoka-watercolor.webp";
-  if (/宮城|Miyagi/i.test(venue)) return "assets/publication-locations/miyagi-watercolor.webp";
-  if (/北海道|Hokkaido/i.test(venue)) return "assets/publication-locations/hokkaido-watercolor.webp";
-  if (/京都|Kyoto/i.test(venue)) return "assets/publication-locations/kyoto.png";
-  if (/静岡|Shizuoka/i.test(venue)) return "assets/publication-locations/shizuoka.png";
+  if (/福岡|Fukuoka/i.test(venue)) return "assets/publication-locations/fukuoka-watercolor-v2.webp";
+  if (/宮城|Miyagi/i.test(venue)) return "assets/publication-locations/miyagi-watercolor-v2.webp";
+  if (/北海道|Hokkaido/i.test(venue)) return "assets/publication-locations/hokkaido-watercolor-v2.webp";
+  if (/京都|Kyoto/i.test(venue)) return "assets/publication-locations/kyoto-watercolor-v2.webp";
+  if (/静岡|Shizuoka/i.test(venue)) return "assets/publication-locations/shizuoka-watercolor-v2.webp";
   return "";
 }
 
