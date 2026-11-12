@@ -1868,3 +1868,135 @@ body {
     height: 5.2rem;
   }
 }
+
+
+/* Sakura palette for the Education timeline */
+.timeline::before {
+  width: 2px;
+  background: linear-gradient(180deg, #eabac4 0%, #cf899b 48%, #edc9d0 100%);
+  border-radius: 99px;
+}
+.timeline li::before {
+  top: .48rem;
+  left: calc(-1rem - 1px);
+  width: .65rem;
+  height: .65rem;
+  background: #d894a4;
+  border: 2px solid #fff7f6;
+  box-shadow: 0 0 0 2px #e9c4cc, 0 2px 5px rgba(151, 93, 111, .14);
+}
+
+/* Awards: hide the stray ornament on the right. */
+.awards-page::after {
+  display: none;
+  content: none;
+}
+
+/* Soft stationery-style publication category headings. */
+.publication-group {
+  --heading-wash: #fff0f2;
+  --heading-edge: #e8bec9;
+  --heading-ink: #82545f;
+}
+.publication-group:nth-of-type(2) {
+  --heading-wash: #f5f0fa;
+  --heading-edge: #d9c5e7;
+  --heading-ink: #755d80;
+}
+.publication-group:nth-of-type(3) {
+  --heading-wash: #fff1eb;
+  --heading-edge: #e9cec0;
+  --heading-ink: #8b665d;
+}
+.publication-group:nth-of-type(4) {
+  --heading-wash: #f9f2f2;
+  --heading-edge: #e5c9cf;
+  --heading-ink: #805c65;
+}
+.publication-group h2,
+.publication-group:nth-of-type(2) h2,
+.publication-group:nth-of-type(3) h2,
+.publication-group:nth-of-type(4) h2 {
+  gap: .6rem;
+  margin: .2rem 0 .95rem;
+  padding: .5rem 1.25rem .5rem .72rem;
+  color: var(--heading-ink);
+  background:
+    linear-gradient(125deg, rgba(255,255,255,.82), transparent 74%),
+    var(--heading-wash);
+  border: 1px solid var(--heading-edge);
+  border-radius: 16px 18px 18px 9px;
+  box-shadow: 0 6px 18px rgba(144, 100, 112, .07), inset 0 1px 0 rgba(255,255,255,.9);
+  font-size: clamp(1rem, 1.9vw, 1.15rem);
+  font-weight: 600;
+  letter-spacing: .065em;
+  line-height: 1.45;
+}
+.publication-group h2::before,
+.publication-group:nth-of-type(2) h2::before,
+.publication-group:nth-of-type(3) h2::before,
+.publication-group:nth-of-type(4) h2::before {
+  display: inline-block;
+  flex: 0 0 1.5rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: url("assets/sakura-single.webp") center / contain no-repeat;
+  border: none;
+  border-radius: 0;
+  content: "";
+}
+.publication-group h2::after {
+  content: "";
+  align-self: center;
+  width: .42rem;
+  height: .42rem;
+  margin-left: .12rem;
+  background: var(--heading-edge);
+  border-radius: 50%;
+  opacity: .75;
+}
+
+/* Coordinated print/PDF action without altering browser print behavior. */
+.cv-print {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .55rem;
+  min-height: 2.65rem;
+  padding: .62rem 1.05rem;
+  color: #855660;
+  background: linear-gradient(145deg, rgba(255,255,255,.9), rgba(255,231,236,.95));
+  border: 1px solid #dfb6c1;
+  border-radius: 999px;
+  box-shadow: 0 5px 13px rgba(139, 82, 100, .09), inset 0 1px rgba(255,255,255,.95);
+  font-size: .85rem;
+  font-weight: 600;
+  line-height: 1.45;
+  white-space: nowrap;
+  transition: background .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+.cv-print::before {
+  display: inline-block;
+  flex: 0 0 1.25rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  background: url("assets/sakura-single.webp") center / contain no-repeat;
+  content: "";
+}
+.cv-print:hover {
+  background: linear-gradient(145deg, #fff8f7, #fbdbe4);
+  box-shadow: 0 7px 16px rgba(139, 82, 100, .13);
+  transform: translateY(-1px);
+}
+.cv-print:focus-visible {
+  outline: 2px solid #be7389;
+  outline-offset: 3px;
+}
+.cv-print:active { transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) {
+  .cv-print { transition: none; }
+}
+@media (max-width: 560px) {
+  .publication-group h2 { max-width: 100%; }
+  .cv-print { white-space: normal; }
+}
