@@ -176,6 +176,14 @@ const paperDetails = {
 };
 const awardRecords = [
   {
+    year: "2027.4〜",
+    sort: "2026-10",
+    titleJa: "日本学術振興会特別研究員（DC1）採択",
+    titleEn: "Selected as a JSPS Research Fellow (DC1)",
+    bodyJa: "日本学術振興会（JSPS）",
+    bodyEn: "Japan Society for the Promotion of Science (JSPS)"
+  },
+  {
     year: 2026,
     sort: "2026-06",
     titleJa: "RCS研究会 初めての研究会 優秀発表賞",
